@@ -1,0 +1,81 @@
+/**
+ * Setup the Module Template according to your needs
+ */
+class {
+
+	static{
+		downloadUrl = "https://downloads.ortussolutions.com/ortussolutions/boxlang-modules/@MODULE_SLUG@/@build.version@/@MODULE_SLUG@-@build.version@.zip"
+	}
+
+	/**
+	 * Setup the module template
+	 */
+	function main(){
+		variables.cwd = server.cli.executionPath & "/"
+
+		var moduleName = cliRead( "What is the human readable name of your module? " )
+		if( !len( moduleName ) ){
+			return println( "Module Name is required" )
+		}
+
+		var moduleDescription = cliRead( "Short description of your module? " )
+		if( !len( moduleDescription ) ){
+			return println( "Module Description is required" )
+		}
+
+		var moduleRegisteredName = cliRead( "What is the name this module should be registered as by the BoxLang runtime (Avoid hypens if necesary) ? (Ex: bxorm, ai, oshi) " )
+		if( !len( moduleRegisteredName ) ){
+			return println( "Module Registration name is required" )
+		}
+
+		var moduleSlug = cliRead( "What is the FORGEBOX slug for your module? (Ex: bx-orm, bx-pdf, bx-mymodule) " )
+		if( !len( moduleSlug ) ){
+			return println( "Module Slug is required" )
+		}
+
+		var forgeBoxStorage = cliRead( "Do you want to store the module in FORGEBOX when publishing? (y/N) " ).trim()
+		if( !len( forgeBoxStorage ) ){
+			forgeBoxStorage = "N"
+		}
+		var forgeBoxStorageUrl = "forgeboxStorage";
+		if( !booleanFormat( forgeBoxStorage ) ){
+			forgeBoxStorageUrl = static.downloadUrl.replaceNoCase( "@MODULE_SLUG@", moduleSlug )
+		}
+
+		Build::tokenReplace(
+			targetDir = variables.cwd,
+			token       = "@MODULE_STORAGE@",
+			replacement = forgeBoxStorageUrl
+		)
+
+		Build::tokenReplace(
+			targetDir = variables.cwd,
+			token       = "@MODULE_NAME@",
+			replacement = moduleName
+		)
+
+		Build::tokenReplace(
+			targetDir = variables.cwd,
+			token       = "@MODULE_REGISTERED_NAME@",
+			replacement = moduleRegisteredName
+		)
+
+		Build::tokenReplace(
+			targetDir = variables.cwd,
+			token       = "@MODULE_SLUG@",
+			replacement = moduleSlug
+		)
+
+		Build::tokenReplace(
+			targetDir = variables.cwd,
+			token       = "@MODULE_DESCRIPTION@",
+			replacement = moduleDescription
+		)
+
+		// Finalize Message
+		println( "" );
+		println( "✅ Your module template is now ready for development! Just add the github origin, commit some code and Go rock it!" )
+		println( "✅ You can delete this file now!" )
+	}
+
+}
