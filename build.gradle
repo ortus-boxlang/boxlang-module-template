@@ -105,7 +105,7 @@ javadoc {
 	options.addBooleanOption( 'html5', true )
 }
 task zipJavadocs( type: Zip ) {
-	group "documentation"
+	group = "documentation"
 	from javadoc.destinationDir
 	archiveFileName = "${project.name}-javadocs-${version}.zip"
 	destinationDirectory = file( "$buildDir/distributions" )
@@ -195,7 +195,7 @@ task createModuleStructure(type: Copy) {
     destinationDir = file( 'build/module' )
 }
 task zipModuleStructure( type: Zip ) {
-    group "distribution"
+    group = "distribution"
     from createModuleStructure.destinationDir
     archiveFileName = "${project.name}-${version}.zip"
     destinationDirectory = file( "$buildDir/distributions" )
