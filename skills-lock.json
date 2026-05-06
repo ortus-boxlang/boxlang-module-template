@@ -43,11 +43,59 @@
       "skillPath": "boxlang-core-development/runtime-architecture/SKILL.md",
       "computedHash": "ab17b6e1b2559fe5abda5e01b2811f1d883b72caa0883ce32bd7d90c6944fd8e"
     },
+    "code-documenter": {
+      "source": "ortus-solutions/skills",
+      "sourceType": "github",
+      "skillPath": "code-documenter/SKILL.md",
+      "computedHash": "de7138ac479b9ed08b420fad5d849e8a40557b7bed76df92e6d3fe3c999fbc15"
+    },
+    "code-reviewer": {
+      "source": "ortus-solutions/skills",
+      "sourceType": "github",
+      "skillPath": "code-reviewer/SKILL.md",
+      "computedHash": "66d98957820171099d66958feb3e7623d2753021ecb5ab50139404f3b22a1fa0"
+    },
+    "gitbook-docs-expert": {
+      "source": "ortus-solutions/skills",
+      "sourceType": "github",
+      "skillPath": "gitbook-docs-expert/SKILL.md",
+      "computedHash": "437ded98559bb04d1f6656b53866dcfb2f0673135565455b01f1ca45f9c2a38f"
+    },
+    "github-action-authoring": {
+      "source": "ortus-solutions/skills",
+      "sourceType": "github",
+      "skillPath": "github-action-authoring/SKILL.md",
+      "computedHash": "85217c7ed167090f88a76d706c8240b543785aba775420e3012d172f67085dfe"
+    },
     "java-expert": {
       "source": "ortus-solutions/skills",
       "sourceType": "github",
       "skillPath": "java-expert/SKILL.md",
       "computedHash": "f622426ac4233ec79888d7c2b87c966efa41fed4dd06fbe24f77b86c3da79079"
+    },
+    "junit-expert": {
+      "source": "ortus-solutions/skills",
+      "sourceType": "github",
+      "skillPath": "junit-expert/SKILL.md",
+      "computedHash": "5ec181a33d4888873dbbc3fc56308fc4ca76dd630e21022284a13f07f092f6c9"
+    },
+    "mockito-expert": {
+      "source": "ortus-solutions/skills",
+      "sourceType": "github",
+      "skillPath": "mockito-expert/SKILL.md",
+      "computedHash": "db3902df46e248b2815490b36b580b5c7e6419235de62ce5c661b0e5624763b2"
+    },
+    "ortus-java-coding-standards": {
+      "source": "ortus-solutions/skills",
+      "sourceType": "github",
+      "skillPath": "ortus-java-coding-standards/SKILL.md",
+      "computedHash": "e6e01c1a923e061498200139bb586a59b94ce3f4a4f03cc96781393420f83c61"
+    },
+    "security-expert": {
+      "source": "ortus-solutions/skills",
+      "sourceType": "github",
+      "skillPath": "security-expert/SKILL.md",
+      "computedHash": "abf315283fb188b80d0b767cfdbd0984f501ab1ec7083c5b58d15e3e6b3abf59"
     }
   }
 }
