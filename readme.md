@@ -24,6 +24,16 @@ box task run taskFile=src/build/SetupTemplate
 
 The `SetupTemplate` task will ask you for your module name, id and description and configure the template for you! Enjoy!
 
+## Install Skills
+
+If you are using the Copilot agent workflow with this template, restore the project skills from `skills-lock.json` when you first start working in the project:
+
+```bash
+npx skills experimental_install
+```
+
+Run the command from the project root so the workspace restores the pinned skills defined for this template.
+
 ## Directory Structure
 
 Here is a brief overview of the directory structure:
