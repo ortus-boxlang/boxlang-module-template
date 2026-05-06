@@ -13,3 +13,10 @@ bin/**
 /libs/
 src/test/resources/libs/*
 !src/test/resources/libs/.gitkeep
+.agents/skills/boxlang-core-dev-async-tasks/SKILL.md
+.agents/skills/boxlang-core-dev-bif-development/SKILL.md
+.agents/skills/boxlang-core-dev-component-development/SKILL.md
+.agents/skills/boxlang-core-dev-interceptors/SKILL.md
+.agents/skills/boxlang-core-dev-logging/SKILL.md
+.agents/skills/boxlang-core-dev-module-development/SKILL.md
+.agents/skills/boxlang-core-dev-runtime-architecture/SKILL.md
