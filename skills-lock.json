@@ -42,6 +42,12 @@
       "sourceType": "github",
       "skillPath": "boxlang-core-development/runtime-architecture/SKILL.md",
       "computedHash": "ab17b6e1b2559fe5abda5e01b2811f1d883b72caa0883ce32bd7d90c6944fd8e"
+    },
+    "java-expert": {
+      "source": "ortus-solutions/skills",
+      "sourceType": "github",
+      "skillPath": "java-expert/SKILL.md",
+      "computedHash": "f622426ac4233ec79888d7c2b87c966efa41fed4dd06fbe24f77b86c3da79079"
     }
   }
 }
