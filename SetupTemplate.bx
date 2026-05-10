@@ -38,7 +38,7 @@ class {
 			forgeBoxStorage = "N"
 		}
 		var forgeBoxStorageUrl = "forgeboxStorage";
-		if( !booleanFormat( forgeBoxStorage ) ){
+		if( !booleanFormat( forgeBoxStorage == "y" ? true : false ) ){
 			forgeBoxStorageUrl = static.downloadUrl.replaceNoCase( "@MODULE_SLUG@", moduleSlug )
 		}
 
