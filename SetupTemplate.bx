@@ -42,31 +42,31 @@ class {
 			forgeBoxStorageUrl = static.downloadUrl.replaceNoCase( "@MODULE_SLUG@", moduleSlug )
 		}
 
-		Build::tokenReplace(
+		tokenReplace(
 			targetDir = variables.cwd,
 			token       = "@MODULE_STORAGE@",
 			replacement = forgeBoxStorageUrl
 		)
 
-		Build::tokenReplace(
+		tokenReplace(
 			targetDir = variables.cwd,
 			token       = "@MODULE_NAME@",
 			replacement = moduleName
 		)
 
-		Build::tokenReplace(
+		tokenReplace(
 			targetDir = variables.cwd,
 			token       = "@MODULE_REGISTERED_NAME@",
 			replacement = moduleRegisteredName
 		)
 
-		Build::tokenReplace(
+		tokenReplace(
 			targetDir = variables.cwd,
 			token       = "@MODULE_SLUG@",
 			replacement = moduleSlug
 		)
 
-		Build::tokenReplace(
+		tokenReplace(
 			targetDir = variables.cwd,
 			token       = "@MODULE_DESCRIPTION@",
 			replacement = moduleDescription
@@ -76,6 +76,42 @@ class {
 		println( "" );
 		println( "✅ Your module template is now ready for development! Just add the github origin, commit some code and Go rock it!" )
 		println( "✅ You can delete this file now!" )
+	}
+
+	/**
+	 * Replace tokens in files
+	 *
+	 * @targetDir Target directory
+	 * @token Token to replace
+	 * @replacement Replacement string
+	 * @excludes Excluded files and directories
+	 */
+	static public function tokenReplace(
+		required targetDir,
+		required token,
+		required replacement,
+		excludes = [ "^\.git", "SetupTemplate.bx", "Test.bx" ],
+		boolean verbose = false
+	){
+		directoryList( arguments.targetDir, true, "array", "*.*", "asc", "file" )
+			.filter( item => {
+				var targetPath = item.replaceNoCase( targetDir, "" )
+				return !excludes.some( pattern => targetPath.reFindNoCase( pattern ) )
+			} )
+			.each( item => {
+				var targetPath = item.replaceNoCase( targetDir, "" )
+				var content = fileRead( item )
+
+				if( content.findNoCase( token ) ){
+					if( verbose )
+						println( "✅ Replacing token in [#targetPath#]" );
+					var newContent = content.replaceNoCase( token, replacement, "all" );
+					fileWrite( item, newContent )
+				} else{
+					if( verbose )
+						println( "- Skipping, token not found on [#targetPath#]" )
+				}
+			} );
 	}
 
 }
