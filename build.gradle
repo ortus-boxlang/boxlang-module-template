@@ -46,6 +46,7 @@ dependencies {
 	// Implementation Dependencies FOR THIS MODULE
 
 	// Test Frameworks
+	testImplementation 'io.github.cdimascio:dotenv-java:3.2.0'
 	testImplementation "org.junit.jupiter:junit-jupiter:6.+"
 	testImplementation "org.mockito:mockito-core:5.+"
 	testImplementation "com.google.truth:truth:1.+"
@@ -54,8 +55,9 @@ dependencies {
 }
 
 java {
-	sourceCompatibility = JavaVersion.toVersion( jdkVersion )
-	targetCompatibility = JavaVersion.toVersion( jdkVersion )
+	toolchain {
+        languageVersion.set( JavaLanguageVersion.of( jdkVersion ) )
+    }
 	withJavadocJar()
 	withSourcesJar()
 }
@@ -75,7 +77,7 @@ compileJava {
 	// Compiler Options
 	options.incremental = true
 	options.encoding = 'UTF-8'
-	options.debug = true
+	options.debugOptions.debugLevel = "source,lines,vars"
 }
 
 compileTestJava{
@@ -171,6 +173,8 @@ task createModuleStructure(type: Copy) {
     }
     from( 'src/main/bx' ) {
 		include '**/*.bx'
+		include '**/*.bxm'
+		include '**/*.bxs'
 		// Token Replacements Go Here
 		filter{ line -> line.replaceAll( '@build.version@', project.version ) }
 		if( project.branch == "development" ){
@@ -190,6 +194,10 @@ task createModuleStructure(type: Copy) {
 		} else {
 			filter{ line -> line.replaceAll( '@build.number@', project.buildID ) }
 		}
+    }
+    from( 'docs' ) {
+        include '**/*.md'
+        into 'docs'
     }
 
     destinationDir = file( 'build/module' )
@@ -211,6 +219,10 @@ test {
     useJUnitPlatform()
     testLogging {
 		showStandardStreams = true
+		events "passed", "skipped", "failed"
+        exceptionFormat "full"
+        showExceptions true
+        showCauses true
 	}
 	classpath = classpath.filter { !it.path.contains( "build${File.separator}resources" ) }
 }
