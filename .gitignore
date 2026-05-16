@@ -14,3 +14,4 @@ bin/**
 src/test/resources/libs/*
 !src/test/resources/libs/.gitkeep
 .agents/skills/**
+.opencode

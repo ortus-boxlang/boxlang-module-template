@@ -1,63 +1,125 @@
 {
-	"array.empty_padding": false,
-	"array.padding": true,
-	"array.multiline.min_length": 50,
-	"array.multiline.element_count": 2,
-	"array.multiline.leading_comma.padding": true,
-	"array.multiline.leading_comma": false,
-	"alignment.consecutive.assignments": true,
-	"alignment.consecutive.properties": true,
-	"alignment.consecutive.params": true,
-	"alignment.doc_comments" : true,
-	"brackets.padding": true,
-	"comment.asterisks": "align",
-	"binary_operators.padding": true,
-	"for_loop_semicolons.padding": true,
-	"function_call.empty_padding": false,
-	"function_call.padding": true,
-	"function_call.multiline.leading_comma.padding": true,
-	"function_call.casing.builtin": "cfdocs",
-	"function_call.casing.userdefined": "camel",
-	"function_call.multiline.element_count": 3,
-	"function_call.multiline.leading_comma": false,
-	"function_call.multiline.min_length": 50,
-	"function_declaration.padding": true,
-	"function_declaration.empty_padding": false,
-	"function_declaration.multiline.leading_comma": false,
-	"function_declaration.multiline.leading_comma.padding": true,
-	"function_declaration.multiline.element_count": 3,
-	"function_declaration.multiline.min_length": 50,
-	"function_declaration.group_to_block_spacing": "compact",
-	"function_anonymous.empty_padding": false,
-	"function_anonymous.group_to_block_spacing": "compact",
-	"function_anonymous.multiline.element_count": 3,
-	"function_anonymous.multiline.leading_comma": false,
-	"function_anonymous.multiline.leading_comma.padding": true,
-	"function_anonymous.multiline.min_length": 50,
-	"function_anonymous.padding": true,
-	"indent_size": 4,
-	"keywords.block_to_keyword_spacing": "spaced",
-	"keywords.group_to_block_spacing": "spaced",
-	"keywords.padding_inside_group": true,
-	"keywords.spacing_to_block": "spaced",
-	"keywords.spacing_to_group": true,
-	"keywords.empty_group_spacing": false,
-	"max_columns": 115,
-	"metadata.multiline.element_count": 3,
-	"metadata.multiline.min_length": 50,
-	"method_call.chain.multiline" : 3,
-	"newline":"\n",
-	"property.multiline.element_count": 3,
-	"property.multiline.min_length": 30,
-	"parentheses.padding": true,
-	"strings.quote": "double",
-	"strings.attributes.quote": "double",
-	"struct.separator": " : ",
-	"struct.padding": true,
-	"struct.empty_padding": false,
-	"struct.multiline.leading_comma": false,
-	"struct.multiline.leading_comma.padding": true,
-	"struct.multiline.element_count": 2,
-	"struct.multiline.min_length": 60,
-	"tab_indent": true
+	"indentSize": 4,
+	"tabIndent": true,
+	"maxLineLength": 115,
+	"newLine": "\n",
+	"singleQuote": false,
+	"preserveStringQuotes": false,
+	"alignConsecutiveAssignments": true,
+	"alignConsecutiveProperties": true,
+	"bracketPadding": true,
+	"parensPadding": true,
+	"binaryOperatorsPadding": true,
+	"semicolons": false,
+	"cfFormatCompatibility": true,
+	"sourceType": null,
+	"struct": {
+		"padding": true,
+		"empty_padding": false,
+		"quote_keys": false,
+		"separator": " : ",
+		"multiline": {
+			"element_count": 2,
+			"comma_dangle": false,
+			"leading_comma": {
+				"enabled": false,
+				"padding": true
+			},
+			"min_length": 60
+		}
+	},
+	"property": {
+		"multiline": {
+			"element_count": 3,
+			"comma_dangle": false,
+			"leading_comma": {
+				"enabled": false,
+				"padding": true
+			},
+			"min_length": 30
+		},
+		"key_value": {
+			"padding": false
+		}
+	},
+	"array": {
+		"padding": true,
+		"empty_padding": false,
+		"multiline": {
+			"element_count": 2,
+			"comma_dangle": false,
+			"leading_comma": {
+				"enabled": false,
+				"padding": true
+			},
+			"min_length": 50
+		}
+	},
+	"for_loop_semicolons": {
+		"padding": true
+	},
+	"function": {
+		"style": "preserve",
+		"parameters": {
+			"padding": true,
+			"empty_padding": false,
+			"comma_dangle": false,
+			"multiline_count": 3,
+			"multiline_length": 50
+		},
+		"arrow": {
+			"parens": "always"
+		}
+	},
+	"arguments": {
+		"padding": true,
+		"empty_padding": false,
+		"comma_dangle": false,
+		"multiline_count": 3,
+		"multiline_length": 50
+	},
+	"braces": {
+		"style": "same-line",
+		"require_for_single_statement": true,
+		"else": {
+			"style": "same-line"
+		}
+	},
+	"operators": {
+		"position": "end",
+		"comparison_style": "preserve",
+		"ternary": {
+			"style": "flat",
+			"question_position": "start"
+		}
+	},
+	"chain": {
+		"break_count": 3,
+		"break_length": 2147483647
+	},
+	"template": {
+		"component_prefix": "bx",
+		"indent_content": true,
+		"single_attribute_per_line": false,
+		"self_closing": false
+	},
+	"import": {
+		"sort": false,
+		"group": false
+	},
+	"comments": {
+		"preserve_blank_lines": true,
+		"wrap": false
+	},
+	"class": {
+		"member_order": "preserve",
+		"member_spacing": 1,
+		"property_order": "preserve",
+		"method_order": "preserve",
+		"method_grouping": false
+	},
+	"sql": {
+		"uppercase_keywords": true,
+		"indent_clauses": true
+	}
 }
