@@ -45,7 +45,7 @@ class {
 	/**
 	 * The module description
 	 */
-	this.description = "This module does amazing things";
+	this.description = "@MODULE_DESCRIPTION@";
 
 	/**
 	 * The module web URL
