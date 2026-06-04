@@ -70,7 +70,7 @@ jobs:
           ./gradlew shadowJar test --stacktrace --console=plain
 
       - name: Publish Test Reports
-        uses: mikepenz/action-junit-report@v6.4.0
+        uses: mikepenz/action-junit-report@v6.4.1
         if: always()
         with:
           report_paths: |
